@@ -34,3 +34,15 @@ const fn1: UperIdent<number> = {
 const fn2: UperIdent2 = function<T>(str: T) {
   return str;
 };
+
+export function Double<T>(arg: T): T {
+  let result;
+  if (typeof arg === 'string') {
+    result = arg + '' + arg;
+  } else if (typeof arg === 'number') {
+    result = arg * 2;
+  } else {
+    result = arg;
+  }
+  return arg;
+}
